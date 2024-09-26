@@ -17,7 +17,11 @@ int main() {
                 run = false;
                 break;
             case 1:
-                cout << "Standing desks are on sale for $200!" << endl;
+                cout << "What size do you want your desk to be?" << endl;
+                cout << "1. Small, $309.99" << endl;
+                cout << "2. Medium, $339.99" << endl;
+                cout << "3. Large, $369.99" << endl;
+
                 break;
             case 2:
                 cout << "Black curtains are on sale for $20!" << endl;
