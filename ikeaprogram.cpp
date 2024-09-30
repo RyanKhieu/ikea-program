@@ -5,11 +5,12 @@ int deskChoice = 0;
 double deskTotalPrice = 0;
 int curtainChoice = 0;
 double curtainTotalPrice = 0;
-bool run = true;
+int tableChoice = 0;
+double tableTotalPrice = 0;
 
 int main() {
     cout << "Hello, Welcome to IKEA Denville (Store No. 3008)!" << endl;
-    while (run) {
+    while (true) {
         cout << "What would you like to buy today? Enter the number of your selection. To stop shopping, enter 0." << endl;
         cout << "1. Standing desks" << endl;
         cout << "2. Black Curtains" << endl;
@@ -18,8 +19,8 @@ int main() {
         cin >> itemChoice;
         switch (itemChoice) {
             case 0:
-                run = false;
-                break;
+                cout << "Thank you for shopping at IKEA Denville! Your total is $" << deskTotalPrice + curtainTotalPrice + tableTotalPrice << endl;
+                return 0; // Exit the program
             case 1:
                 cout << "What size do you want your desk to be?" << endl;
                 cout << "1. Small, $309.99" << endl;
@@ -41,19 +42,14 @@ int main() {
                         break;
                 }
 
+2
                 break;
             case 2:
                 cout << "What length do you want your curtains to be?" << endl;
-                cout << "1. 45\", $19.99" << endl;
-                cout << "2. 46\", $20.99" << endl;
-                cout << "3. 47\", $21.99" << endl;
-                cout << "4. 48\", $22.99" << endl;
-                cout << "5. 49\", $23.99" << endl;
-                cout << "6. 50\", $24.99" << endl;
-                cout << "7. 51\", $25.99" << endl;
-                cout << "8. 52\", $26.99" << endl;
-                cout << "9. 53\", $27.99" << endl;
-                cout << "10. 54\", $28.99" << endl;
+                for (int i = 1; i <= 9; i++) {
+                cout << i << ". " << (44 + i) << "\", $" << (18.99 + i) << endl;
+                }
+                cout << "What length do you want your curtains to be?" << endl;
                 cin >> curtainChoice;
                 switch (curtainChoice) {
                     case 1:
@@ -93,7 +89,18 @@ int main() {
 
                 break;
             case 3:
-                cout << "Tabletops are on sale for $50!" << endl;
+                cout << "What tabletop do you want?" << endl;
+                cout << "1. Wooden" << endl;
+                cout << "2. Marble" << endl;
+                cout << "3. Granite" << endl;
+                switch (tableChoice) {
+                    case 1:
+                        curtainTotalPrice += 29.99;
+                        break;
+                    case 2:
+                        cur
+
+                }
                 break;
             case 4:
                 cout << "Table legs are on sale for $30!" << endl;
