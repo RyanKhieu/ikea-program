@@ -6,6 +6,7 @@
 */
 
 #include <iostream>
+#include <cstdio>
 using namespace std;
 int itemsOrdered = 0;
 int itemChoice = 0;
@@ -28,12 +29,16 @@ int main() {
         cout << "4. Table legs" << endl;
         cin >> itemChoice;
         switch (itemChoice) { // Switch case for menu
-            case 0:
-                cout << "Thank you for shopping at IKEA Denville! You ordered " << itemsOrdered << " items for a subtotal of " << deskTotalPrice + curtainTotalPrice + tableTotalPrice + legTotalPrice << endl;
-                cout << "NJ Sales Tax (6.625%): " << (deskTotalPrice + curtainTotalPrice + tableTotalPrice + legTotalPrice) * 0.06625 << endl;
-                cout << "Total: " << (deskTotalPrice + curtainTotalPrice + tableTotalPrice + legTotalPrice) * 1.06625 << endl;
+            case 0: {
+                double subtotal = deskTotalPrice + curtainTotalPrice + tableTotalPrice + legTotalPrice;
+                double tax = subtotal * 0.06625;
+                double total = subtotal * 1.06625;
+                cout << "Thank you for shopping at IKEA Denville! You ordered " << itemsOrdered << " items for a subtotal of $" << subtotal << endl;
+                printf("NJ Sales Tax (6.625%%): $%.2f\n", tax);
+                printf("Total: $%.2f\n", total);
                 cout << "Have a great day!" << endl;
                 return 0; // Exit the program
+            }
             case 1: // Standing desks
                 cout << "What size do you want your desk to be?" << endl;
                 cout << "1. Small, $309.99" << endl;
