@@ -18,10 +18,11 @@ int tableChoice = 0;
 double tableTotalPrice = 0;
 int legChoice = 0;
 double legTotalPrice = 0;
+bool running = true;
 
 int main() {
     cout << "Hello, Welcome to IKEA Denville (Store No. 3008)!" << endl; // Welcome message
-    while (true) {
+    while (running) {
         cout << "What would you like to buy today? Enter the number of your selection. To stop shopping, enter 0." << endl; // Menu
         cout << "1. Standing desks" << endl;
         cout << "2. Blackout Curtains" << endl;
@@ -29,16 +30,10 @@ int main() {
         cout << "4. Table legs" << endl;
         cin >> itemChoice;
         switch (itemChoice) { // Switch case for menu
-            case 0: {
-                double subtotal = deskTotalPrice + curtainTotalPrice + tableTotalPrice + legTotalPrice;
-                double tax = subtotal * 0.06625;
-                double total = subtotal * 1.06625;
-                cout << "Thank you for shopping at IKEA Denville! You ordered " << itemsOrdered << " items for a subtotal of $" << subtotal << endl;
-                printf("NJ Sales Tax (6.625%%): $%.2f\n", tax);
-                printf("Total: $%.2f\n", total);
-                cout << "Have a great day!" << endl;
-                return 0; // Exit the program
-            }
+        case 0: { // Ending the shopping
+            running = false;
+            break; 
+          }
             case 1: // Standing desks
                 cout << "What size do you want your desk to be?" << endl;
                 cout << "1. Small, $309.99" << endl;
@@ -69,50 +64,11 @@ int main() {
                     cout << i << ". " << (44 + i) << "\", $" << (18.99 + i) << endl;
                 }
                 cin >> curtainChoice;
-                switch (curtainChoice) { // Switch case for curtain length
-                    case 1:
-                        curtainTotalPrice += 19.99;
-                        itemsOrdered++;
-                        break;
-                    case 2:
-                        curtainTotalPrice += 20.99;
-                        itemsOrdered++;
-                        break;
-                    case 3:
-                        curtainTotalPrice += 21.99;
-                        itemsOrdered++;
-                        break;
-                    case 4:
-                        curtainTotalPrice += 22.99;
-                        itemsOrdered++;
-                        break;
-                    case 5:
-                        curtainTotalPrice += 23.99;
-                        itemsOrdered++;
-                        break;
-                    case 6:
-                        curtainTotalPrice += 24.99;
-                        itemsOrdered++;
-                        break;
-                    case 7:
-                        curtainTotalPrice += 25.99;
-                        itemsOrdered++;
-                        break;
-                    case 8:
-                        curtainTotalPrice += 26.99;
-                        itemsOrdered++;
-                        break;
-                    case 9:
-                        curtainTotalPrice += 27.99;
-                        itemsOrdered++;
-                        break;
-                    case 10:
-                        curtainTotalPrice += 28.99;
-                        itemsOrdered++;
-                        break;
-                    default:
-                        cout << "Invalid selection. Please try again." << endl;
-                        break;
+                if (curtainChoice >= 1 && curtainChoice <= 10) {
+                    curtainTotalPrice += 18.99 + curtainChoice; // The price starts from 19.99 (18.99 + 1)
+                    itemsOrdered++;
+                } else {
+                    cout << "Invalid selection. Please try again." << endl;
                 }
 
                 break;
@@ -170,4 +126,12 @@ int main() {
             
         }
     }
+    double subtotal = deskTotalPrice + curtainTotalPrice + tableTotalPrice + legTotalPrice;
+    double tax = subtotal * 0.06625;
+    double total = subtotal * 1.06625;
+    cout << "Thank you for shopping at IKEA Denville! You ordered " << itemsOrdered << " items for a subtotal of $" << subtotal << endl;
+    printf("NJ Sales Tax (6.625%%): $%.2f\n", tax);
+    printf("Total: $%.2f\n", total);
+    cout << "Have a great day!" << endl;
+    system("pause");
 }
