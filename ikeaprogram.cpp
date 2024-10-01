@@ -113,9 +113,9 @@ int main() {
                 break;
             case 3: // Tabletops
                 cout << "What tabletop do you want?" << endl;
-                cout << "1. Wooden" << endl;
-                cout << "2. Marble" << endl;
-                cout << "3. Granite" << endl;
+                cout << "1. Wooden, $29.99" << endl;
+                cout << "2. Marble, $79.99" << endl;
+                cout << "3. Granite, $99.99" << endl;
                 cin >> tableChoice;
                 switch (tableChoice) { // Switch case for tabletop
                     case 1:
@@ -137,9 +137,9 @@ int main() {
                 break;
             case 4: // Table legs
                 cout << "What color table leg do you want?" << endl;
-                cout << "1. Black" << endl;
-                cout << "2. White" << endl;
-                cout << "3. Silver" << endl;
+                cout << "1. Black, $29.99" << endl;
+                cout << "2. White, $29.99" << endl;
+                cout << "3. Silver, $29.99" << endl;
                 cin >> legChoice;
                 switch (legChoice) { // Switch case for table leg color
                     case 1:
