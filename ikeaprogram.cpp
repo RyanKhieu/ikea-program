@@ -29,7 +29,7 @@ int main() {
         cin >> itemChoice;
         switch (itemChoice) {
             case 0:
-                cout << "Thank you for shopping at IKEA Denville! You ordered " << itemsOrdered << " items for a subtotal of" << deskTotalPrice + curtainTotalPrice + tableTotalPrice + legTotalPrice << endl;
+                cout << "Thank you for shopping at IKEA Denville! You ordered " << itemsOrdered << " items for a subtotal of " << deskTotalPrice + curtainTotalPrice + tableTotalPrice + legTotalPrice << endl;
                 cout << "NJ Sales Tax (6.625%): " << (deskTotalPrice + curtainTotalPrice + tableTotalPrice + legTotalPrice) * 0.06625 << endl;
                 cout << "Total: " << (deskTotalPrice + curtainTotalPrice + tableTotalPrice + legTotalPrice) * 1.06625 << endl;
                 cout << "Have a great day!" << endl;
